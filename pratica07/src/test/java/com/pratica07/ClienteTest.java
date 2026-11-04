@@ -1,6 +1,8 @@
-package com.pratica07;
+import org.junit.jupiter.api.Test;
 
-public class ClienteTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class ClienteTest {
 
     @Test
     void deveCriarClienteComIdNomeEDesconto() {
@@ -34,4 +36,3 @@ public class ClienteTest {
         assertEquals("Joao(1)(10%)", cliente.toString());
     }
 }
-
