@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FaturaClienteTest {
+class fatura_clienteTest {
 
     @Test
     void deveCriarFaturaComIdClienteEValor() {
@@ -59,6 +59,6 @@ class FaturaClienteTest {
         Cliente cliente = new Cliente(1, "Joao", 0);
         fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
 
-        assertEquals(100.0, fatura.getValorComDesconto());
+        assertEquals(90.0, fatura.getValorComDesconto());
     }
 }

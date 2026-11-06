@@ -49,15 +49,19 @@ public class ContaCliente {
             '}';
     }
 
-    public double addDeposito(double saldo){
-        return this.saldo += saldo;
+    public double addDeposito(double deposito) {
+        this.saldo += deposito;
+        return this.saldo;
     }
 
-    public double subSaldo(double deposito){
-        if(saldo == 0){
+    public double subSaldo(double deposito) {
+        if (deposito > saldo) {
             System.out.println("Saldo insuficiente");
+            return saldo;
         }
-        return this.saldo -= deposito;
+
+        this.saldo -= deposito;
+        return this.saldo;
     }
 
 }
