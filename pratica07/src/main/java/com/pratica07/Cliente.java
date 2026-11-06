@@ -1,3 +1,5 @@
+package com.pratica07;
+
 public class Cliente {
 
     private int id;

@@ -32,7 +32,6 @@ class ClienteTest {
     @Test
     void deveRetornarClienteNoFormatoEsperado() {
         Cliente cliente = new Cliente(1, "Joao", 10);
-
         assertEquals("Joao(1)(10%)", cliente.toString());
     }
 }

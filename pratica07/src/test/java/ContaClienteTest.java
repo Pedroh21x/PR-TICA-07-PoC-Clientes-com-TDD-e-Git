@@ -1,3 +1,5 @@
+import com.pratica07.Cliente;
+import com.pratica07.ContaCliente;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
