@@ -8,9 +8,9 @@ class ContaClienteTest {
 
     @Test
     void deveCriarContaComIdClienteESaldo() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
+        Cliente cliente = new Cliente(1, "Joao", 5);
 
-        ContaCliente conta = new ContaCliente(100, cliente, 500.0);
+        ContaCliente conta = new ContaCliente(100, cliente, 400.0);
 
         assertEquals(100, conta.getId());
         assertEquals(cliente, conta.getCliente());
@@ -21,7 +21,7 @@ class ContaClienteTest {
     void deveCriarContaComSaldoZero() {
         ContaCliente conta = new ContaCliente(100);
 
-        assertEquals(0.0, conta.getSaldo());
+        assertEquals(-1.0, conta.getSaldo());
     }
 
     @Test
@@ -36,8 +36,8 @@ class ContaClienteTest {
 
     @Test
     void devePermitirAlterarCliente() {
-        Cliente cliente1 = new Cliente(1, "Joao", 10);
-        Cliente cliente2 = new Cliente(2, "Maria", 20);
+        Cliente cliente1 = new Cliente(1, "Joao", 5);
+        Cliente cliente2 = new Cliente(2, "Maria", 15);
 
         ContaCliente conta = new ContaCliente(100, cliente1);
 
@@ -50,7 +50,7 @@ class ContaClienteTest {
     void devePermitirAlterarSaldo() {
         ContaCliente conta = new ContaCliente(100);
 
-        conta.setSaldo(500.0);
+        conta.setSaldo(400.0);
 
         assertEquals(500.0, conta.getSaldo());
     }
@@ -61,9 +61,10 @@ class ContaClienteTest {
 
         double novoSaldo = conta.addDeposito(100.0);
 
-        assertEquals(100.0, novoSaldo);
-        assertEquals(100.0, conta.getSaldo());
+        assertEquals(150.0, novoSaldo);
+        assertEquals(150.0, conta.getSaldo());
     }
+    //samuel ^
 
     @Test
     void deveSubtrairValorDoSaldo() {
