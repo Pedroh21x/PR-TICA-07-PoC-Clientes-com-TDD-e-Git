@@ -13,9 +13,7 @@ public fatura_cliente(int id, double valor, Cliente cliente) {
 }
 
 
-    public fatura_cliente(int id){
-        this.id = id;
-    }
+
 
     public int getId() {
         return id;

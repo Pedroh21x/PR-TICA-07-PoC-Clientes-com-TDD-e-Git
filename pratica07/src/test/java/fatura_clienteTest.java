@@ -18,4 +18,12 @@ void testConstrutorCompleto() {
     assertSame(cliente, fatura.getCliente());
 }
 
+@Test
+void testConstrutorSomenteId() {
+    fatura_cliente fatura = new fatura_cliente(20);
+
+    assertEquals(20, fatura.getId());
+    assertEquals(0.0, fatura.getValor());
+    assertNull(fatura.getCliente());
+}
 }
