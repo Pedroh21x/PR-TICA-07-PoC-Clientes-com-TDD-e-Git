@@ -68,6 +68,13 @@ class fatura_clienteTest {
 
         assertEquals(100.0, fatura.getValorComDesconto(), 0.001);
     }
+@Test
+    void deveCalcularValorZeradoComDescontoDeCemPorCento() {
+        Cliente cliente = new Cliente(1, "Joao", 100);
+        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+
+        assertEquals(0.0, fatura.getValorComDesconto(), 0.001);
+    }
 
 }
 
