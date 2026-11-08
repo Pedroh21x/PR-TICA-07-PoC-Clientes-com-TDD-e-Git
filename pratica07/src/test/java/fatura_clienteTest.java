@@ -75,6 +75,15 @@ class fatura_clienteTest {
 
         assertEquals(0.0, fatura.getValorComDesconto(), 0.001);
     }
+    @Test
+    void deveRecalcularDescontoAoAlterarValor() {
+        Cliente cliente = new Cliente(1, "Joao", 10);
+        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+
+        fatura.setValor(200.0);
+
+        assertEquals(180.0, fatura.getValorComDesconto(), 0.001);
+    }
 
 }
 
