@@ -61,4 +61,13 @@ class fatura_clienteTest {
 
         assertEquals(90.0, fatura.getValorComDesconto());
     }
+@Test
+    void deveCalcularDescontoDeCinquentaPorCento() {
+        Cliente cliente = new Cliente(1, "Joao", 50);
+        fatura_cliente fatura = new fatura_cliente(100, 200.0, cliente);
+
+        assertEquals(100.0, fatura.getValorComDesconto(), 0.001);
+    }
+
 }
+
