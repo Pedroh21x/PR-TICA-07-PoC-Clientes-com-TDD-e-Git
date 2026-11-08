@@ -28,4 +28,10 @@ public class ClienteTest {
 
     assertEquals("nd", cliente.getGenero());
 }
+    @Test
+public void deveRetornarDesconto() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    assertEquals(10, cliente.getDesconto());
+}
 }

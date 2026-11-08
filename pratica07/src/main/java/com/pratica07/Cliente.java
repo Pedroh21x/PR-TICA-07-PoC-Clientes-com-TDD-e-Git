@@ -15,7 +15,10 @@ public class Cliente {
     public int getId() {
     return id;
 }
-public String getNome() {
+    public String getNome() {
     return nome;
+}
+    public String getGenero() {
+    return genero;
 }
 }
