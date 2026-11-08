@@ -83,4 +83,13 @@ class ContaClienteTest {
 
         assertEquals(100.0, novoSaldo);
     }
+     @Test
+    void deveAcumularVariosDepositos() {
+        ContaCliente conta = new ContaCliente(100);
+
+        conta.addDeposito(100.0);
+        double novoSaldo = conta.addDeposito(50.0);
+
+        assertEquals(150.0, novoSaldo, 0.001);
+        assertEquals(150.0, conta.getSaldo(), 0.001);
 }
