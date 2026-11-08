@@ -11,15 +11,21 @@ public class ClienteTest {
         assertNotNull(cliente);
     }
     @Test
-public void deveRetornarId() {
+    public void deveRetornarId() {
     Cliente cliente = new Cliente(1, "Daniel", 10);
 
     assertEquals(1, cliente.getId());
 }
     @Test
-public void deveRetornarNome() {
+    public void deveRetornarNome() {
     Cliente cliente = new Cliente(1, "Daniel", 10);
 
     assertEquals("Daniel", cliente.getNome());
+}
+    @Test
+    public void deveRetornarGenero() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    assertEquals("nd", cliente.getGenero());
 }
 }
