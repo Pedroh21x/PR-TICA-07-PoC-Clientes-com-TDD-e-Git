@@ -26,4 +26,11 @@ void testConstrutorSomenteId() {
     assertEquals(0.0, fatura.getValor());
     assertNull(fatura.getCliente());
 }
+
+@Test
+void testGetId() {
+    fatura_cliente fatura = new fatura_cliente(30);
+
+    assertEquals(30, fatura.getId());
+}
 }
