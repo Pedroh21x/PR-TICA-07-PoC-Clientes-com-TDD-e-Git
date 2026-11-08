@@ -33,4 +33,13 @@ void testGetId() {
 
     assertEquals(30, fatura.getId());
 }
+
+@Test
+void testGetCliente() {
+    Cliente cliente = new Cliente(1, "Maria",15);
+
+    fatura_cliente fatura = new fatura_cliente(40, 150.0, cliente);
+
+    assertSame(cliente, fatura.getCliente());
+}
 }
