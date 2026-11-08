@@ -24,5 +24,12 @@ public class Cliente {
     public int getDesconto() {
     return desconto;
 }
+    public void setDesconto(int desconto) {
+    this.desconto = desconto;
+}
 
+@Override
+public String toString() {
+    return nome + "(" + id + ")(" + desconto + "%)";
+}
 }
