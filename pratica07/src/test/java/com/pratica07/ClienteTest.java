@@ -16,4 +16,10 @@ public void deveRetornarId() {
 
     assertEquals(1, cliente.getId());
 }
+    @Test
+public void deveRetornarNome() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    assertEquals("Daniel", cliente.getNome());
+}
 }
