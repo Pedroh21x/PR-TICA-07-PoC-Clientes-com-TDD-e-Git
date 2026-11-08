@@ -34,4 +34,19 @@ public void deveRetornarDesconto() {
 
     assertEquals(10, cliente.getDesconto());
 }
+    @Test
+public void deveAlterarDesconto() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    cliente.setDesconto(20);
+
+    assertEquals(20, cliente.getDesconto());
+}
+
+@Test
+public void deveRetornarClienteFormatado() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    assertEquals("Daniel(1)(10%)", cliente.toString());
+}
 }

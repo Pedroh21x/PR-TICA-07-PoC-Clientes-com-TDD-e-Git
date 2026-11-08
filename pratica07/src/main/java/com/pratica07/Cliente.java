@@ -24,4 +24,5 @@ public class Cliente {
     public int getDesconto() {
     return desconto;
 }
+
 }
