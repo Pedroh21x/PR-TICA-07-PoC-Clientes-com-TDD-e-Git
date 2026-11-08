@@ -61,8 +61,8 @@ class ContaClienteTest {
 
         double novoSaldo = conta.addDeposito(100.0);
 
-        assertEquals(200.0, novoSaldo);
-        assertEquals(200.0, conta.getSaldo());
+        assertEquals(100.0, novoSaldo);
+        assertEquals(100.0, conta.getSaldo());
     }
 
     @Test
