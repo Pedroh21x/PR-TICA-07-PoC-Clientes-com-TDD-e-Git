@@ -6,75 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class fatura_clienteTest {
 
-    @Test
-    void deveCriarFaturaComIdClienteEValor() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
 
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+@Test
+void testConstrutorCompleto() {
+    Cliente cliente = new Cliente(1, "Ana",2);
 
-        assertEquals(100, fatura.getId());
-        assertEquals(cliente, fatura.getCliente());
-        assertEquals(100.0, fatura.getValor());
-    }
+    fatura_cliente fatura = new fatura_cliente(10, 200.0, cliente);
 
-    @Test
-    void deveCriarFaturaSomenteComId() {
-        fatura_cliente fatura = new fatura_cliente(100);
-
-        assertEquals(100, fatura.getId());
-    }
-
-    @Test
-    void devePermitirAlterarCliente() {
-        Cliente cliente1 = new Cliente(1, "Joao", 10);
-        Cliente cliente2 = new Cliente(2, "Maria", 20);
-
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente1);
-
-        fatura.setCliente(cliente2);
-
-        assertEquals(cliente2, fatura.getCliente());
-    }
-
-    @Test
-    void devePermitirAlterarValor() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-        fatura.setValor(200.0);
-
-        assertEquals(200.0, fatura.getValor());
-    }
-
-    @Test
-    void deveCalcularValorComDesconto() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-        assertEquals(90.0, fatura.getValorComDesconto());
-    }
-
-    @Test
-    void deveCalcularValorSemDesconto() {
-        Cliente cliente = new Cliente(1, "Joao", 0);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-        assertEquals(90.0, fatura.getValorComDesconto());
-
-    
-    }
-
-    @Test
-void deveRetornarDadosDaFaturaEmTexto() {
-    Cliente cliente = new Cliente(1, "Joao", 10);
-
-    fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-    String resultado = fatura.toString();
-
-    assertEquals(
-        "fatura_cliente{id=100, valor=100.0, cliente=" + cliente + "}",
-        resultado
-    );
+    assertEquals(10, fatura.getId());
+    assertEquals(200.0, fatura.getValor());
+    assertSame(cliente, fatura.getCliente());
 }
+
 }

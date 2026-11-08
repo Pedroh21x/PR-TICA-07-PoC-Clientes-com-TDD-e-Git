@@ -5,11 +5,7 @@ public class fatura_cliente{
     private double valor;
     private Cliente cliente;
 
-    public fatura_cliente(int id, double valor, Cliente cliente) {
-        this.id = id;
-        this.valor = valor;
-        this.cliente = cliente;
-    }
+   
 
     public fatura_cliente(int id){
         this.id = id;
