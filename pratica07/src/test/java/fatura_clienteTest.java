@@ -60,5 +60,21 @@ class fatura_clienteTest {
         fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
 
         assertEquals(90.0, fatura.getValorComDesconto());
+
+    
     }
+
+    @Test
+void deveRetornarDadosDaFaturaEmTexto() {
+    Cliente cliente = new Cliente(1, "Joao", 10);
+
+    fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+
+    String resultado = fatura.toString();
+
+    assertEquals(
+        "fatura_cliente{id=100, valor=100.0, cliente=" + cliente + "}",
+        resultado
+    );
+}
 }
