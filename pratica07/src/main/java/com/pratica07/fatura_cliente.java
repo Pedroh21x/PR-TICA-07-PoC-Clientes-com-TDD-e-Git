@@ -14,7 +14,7 @@ public fatura_cliente(int id, double valor, Cliente cliente) {
 
 
 public fatura_cliente(int id) {
-    this.id = id;
+    this(id, 0.0, null);
 }
 
 
