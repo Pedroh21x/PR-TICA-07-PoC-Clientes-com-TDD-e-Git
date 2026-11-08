@@ -10,4 +10,10 @@ public class ClienteTest {
 
         assertNotNull(cliente);
     }
+    @Test
+public void deveRetornarId() {
+    Cliente cliente = new Cliente(1, "Daniel", 10);
+
+    assertEquals(1, cliente.getId());
+}
 }
