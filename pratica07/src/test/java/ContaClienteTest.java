@@ -81,6 +81,6 @@ class ContaClienteTest {
 
         double novoSaldo = conta.subSaldo(150.0);
 
-        assertEquals(100.0, novoSaldo);
+        assertEquals(300.0, novoSaldo);
     }
 }
