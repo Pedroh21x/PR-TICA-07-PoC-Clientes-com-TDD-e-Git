@@ -24,7 +24,9 @@ public fatura_cliente(int id) {
     }
 
     
-
+    public Cliente getCliente() {
+        return cliente;
+    }
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
