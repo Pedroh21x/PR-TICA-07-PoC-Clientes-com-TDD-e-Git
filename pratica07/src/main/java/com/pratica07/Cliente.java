@@ -12,4 +12,7 @@ public class Cliente {
         this.desconto = desconto;
         this.genero = "nd";
     }
+    public int getId() {
+    return id;
+}
 }
