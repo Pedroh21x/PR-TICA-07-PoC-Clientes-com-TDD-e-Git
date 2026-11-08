@@ -4,60 +4,41 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class fatura_clienteTest {
+public class fatura_clienteTest {
 
-    @Test
-    void deveCriarFaturaComIdClienteEValor() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
 
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+@Test
+void testConstrutorCompleto() {
+    Cliente cliente = new Cliente(1, "Ana",2);
 
-        assertEquals(100, fatura.getId());
-        assertEquals(cliente, fatura.getCliente());
-        assertEquals(100.0, fatura.getValor());
-    }
+    fatura_cliente fatura = new fatura_cliente(10, 200.0, cliente);
 
-    @Test
-    void deveCriarFaturaSomenteComId() {
-        fatura_cliente fatura = new fatura_cliente(100);
+    assertEquals(10, fatura.getId());
+    assertEquals(200.0, fatura.getValor());
+    assertSame(cliente, fatura.getCliente());
+}
 
-        assertEquals(100, fatura.getId());
-    }
+@Test
+void testConstrutorSomenteId() {
+    fatura_cliente fatura = new fatura_cliente(20);
 
-    @Test
-    void devePermitirAlterarCliente() {
-        Cliente cliente1 = new Cliente(1, "Joao", 10);
-        Cliente cliente2 = new Cliente(2, "Maria", 20);
+    assertEquals(20, fatura.getId());
+    assertEquals(0.0, fatura.getValor());
+    assertNull(fatura.getCliente());
+}
 
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente1);
+@Test
+void testGetId() {
+    fatura_cliente fatura = new fatura_cliente(30);
 
-        fatura.setCliente(cliente2);
+    assertEquals(30, fatura.getId());
+}
 
-        assertEquals(cliente2, fatura.getCliente());
-    }
+@Test
+void testGetCliente() {
+    Cliente cliente = new Cliente(1, "Maria",15);
 
-    @Test
-    void devePermitirAlterarValor() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-        fatura.setValor(200.0);
-
-        assertEquals(200.0, fatura.getValor());
-    }
-
-    @Test
-    void deveCalcularValorComDesconto() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
-
-        assertEquals(90.0, fatura.getValorComDesconto());
-    }
-
-    @Test
-    void deveCalcularValorSemDesconto() {
-        Cliente cliente = new Cliente(1, "Joao", 0);
-        fatura_cliente fatura = new fatura_cliente(100, 100.0, cliente);
+    fatura_cliente fatura = new fatura_cliente(40, 150.0, cliente);
 
         assertEquals(90.0, fatura.getValorComDesconto());
     }

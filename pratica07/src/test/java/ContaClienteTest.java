@@ -8,7 +8,7 @@ class ContaClienteTest {
 
     @Test
     void deveCriarContaComIdClienteESaldo() {
-        Cliente cliente = new Cliente(1, "Joao", 10);
+        Cliente cliente = new Cliente(1, "Joao", 5);
 
         ContaCliente conta = new ContaCliente(100, cliente, 500.0);
 
@@ -36,8 +36,8 @@ class ContaClienteTest {
 
     @Test
     void devePermitirAlterarCliente() {
-        Cliente cliente1 = new Cliente(1, "Joao", 10);
-        Cliente cliente2 = new Cliente(2, "Maria", 20);
+        Cliente cliente1 = new Cliente(1, "Joao", 5);
+        Cliente cliente2 = new Cliente(2, "Maria", 15);
 
         ContaCliente conta = new ContaCliente(100, cliente1);
 
@@ -64,6 +64,7 @@ class ContaClienteTest {
         assertEquals(100.0, novoSaldo);
         assertEquals(100.0, conta.getSaldo());
     }
+    //samuel ^
 
     @Test
     void deveSubtrairValorDoSaldo() {
