@@ -19,7 +19,10 @@ public fatura_cliente(int id) {
 
 
 
-    
+    public int getId() {
+        return id;
+    }
+
     
     public Cliente getCliente() {
         return cliente;
